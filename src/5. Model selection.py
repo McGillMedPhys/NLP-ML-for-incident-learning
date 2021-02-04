@@ -132,8 +132,8 @@ def cv_ensemble_base(multioutput, ensemble, base, xs, ys):
 
 
 # Process step
-X_ps = pandas.read_csv('./Machine_Learning/train/X_PS_train.csv', delimiter=',', encoding='latin-1')
-Y_ps = pandas.read_csv('./Machine_Learning/train/Y_PS_train.csv', delimiter=',', encoding='latin-1')
+X_ps = pandas.read_csv('../out/train/X_PS_train.csv', delimiter=',', encoding='latin-1')
+Y_ps = pandas.read_csv('../out/train/Y_PS_train.csv', delimiter=',', encoding='latin-1')
 
 
 
@@ -172,12 +172,12 @@ for multioutput in multioutputs:
             except Exception:
                 pass
         
-ps_models.to_csv('./Machine_Learning/5_PS_models_evaluation.csv', encoding='utf-8', index=False, quoting=csv.QUOTE_NONNUMERIC)
+ps_models.to_csv('../out/5_PS_models_evaluation.csv', encoding='utf-8', index=False, quoting=csv.QUOTE_NONNUMERIC)
 
 
 # Problem type
-X_pt = pandas.read_csv('./Machine_Learning/train/X_PT_train.csv', delimiter=',', encoding='latin-1')
-Y_pt = pandas.read_csv('./Machine_Learning/train/Y_PT_train.csv', delimiter=',', encoding='latin-1')
+X_pt = pandas.read_csv('../out/train/X_PT_train.csv', delimiter=',', encoding='latin-1')
+Y_pt = pandas.read_csv('../out/train/Y_PT_train.csv', delimiter=',', encoding='latin-1')
 
 
 
@@ -217,12 +217,12 @@ for multioutput in multioutputs:
             except Exception:
                 pass
 
-pt_models.to_csv('./Machine_Learning/5_PT_models_evaluation.csv', encoding='utf-8', index=False, quoting=csv.QUOTE_NONNUMERIC)
+pt_models.to_csv('../out/5_PT_models_evaluation.csv', encoding='utf-8', index=False, quoting=csv.QUOTE_NONNUMERIC)
 
 
 # contributing factors
-X_cf = pandas.read_csv('./Machine_Learning/train/X_CF_train.csv', delimiter=',', encoding='latin-1')
-Y_cf = pandas.read_csv('./Machine_Learning/train/Y_CF_train.csv', delimiter=',', encoding='latin-1')
+X_cf = pandas.read_csv('../out/train/X_CF_train.csv', delimiter=',', encoding='latin-1')
+Y_cf = pandas.read_csv('../out/train/Y_CF_train.csv', delimiter=',', encoding='latin-1')
 
 
 
@@ -261,12 +261,12 @@ for multioutput in multioutputs:
             except Exception:
                 pass
         
-cf_models.to_csv('./Machine_Learning/5_CF_models_evaluation.csv', encoding='utf-8', index=False, quoting=csv.QUOTE_NONNUMERIC)
+cf_models.to_csv('../out/5_CF_models_evaluation.csv', encoding='utf-8', index=False, quoting=csv.QUOTE_NONNUMERIC)
 
 
 # # Overall Severity
-# X_os = pandas.read_csv('./Machine_Learning/train/X_OS_train.csv', delimiter=',', encoding='latin-1')
-# Y_os = pandas.read_csv('./Machine_Learning/train/Y_OS_train.csv', delimiter=',', encoding='latin-1')
+# X_os = pandas.read_csv('../out/train/X_OS_train.csv', delimiter=',', encoding='latin-1')
+# Y_os = pandas.read_csv('../out/train/Y_OS_train.csv', delimiter=',', encoding='latin-1')
 
 
 
@@ -305,4 +305,4 @@ cf_models.to_csv('./Machine_Learning/5_CF_models_evaluation.csv', encoding='utf-
 #             except Exception:
 #                 pass
         
-# os_models.to_csv('./Machine_Learning/5_OS_models_evaluation.csv', encoding='utf-8', index=False, quoting=csv.QUOTE_NONNUMERIC)
+# os_models.to_csv('../out/5_OS_models_evaluation.csv', encoding='utf-8', index=False, quoting=csv.QUOTE_NONNUMERIC)

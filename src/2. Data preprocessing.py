@@ -15,7 +15,7 @@ import spacy
 
 
 #---------------- Basic text processing ---------------#
-combined = pandas.read_csv('1_Combined.csv', delimiter=',', encoding='latin-1').fillna('')  # reading the file
+combined = pandas.read_csv('../out/1_Combined.csv', delimiter=',', encoding='latin-1').fillna('')  # reading the file
 #combined = pandas.read_csv('test.csv', delimiter=',', encoding='latin-1').fillna('')  # reading the file
 
 
@@ -86,5 +86,5 @@ combined['Processed text'] = ''
 combined['Processed text'] = combined['Incident Description'].apply(allinOne)
 
 
-combined.to_csv('2_Preprocessed_data.csv', encoding='utf-8', index=False, quoting=csv.QUOTE_NONNUMERIC)
+combined.to_csv('../out/2_Preprocessed_data.csv', encoding='utf-8', index=False, quoting=csv.QUOTE_NONNUMERIC)
 

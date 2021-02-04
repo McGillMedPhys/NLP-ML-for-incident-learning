@@ -20,34 +20,34 @@ from joblib import dump, load
 #LinearSVR was found to be the best model for process_step, problem_type and contributing_factor datasets.
 
 ## Process Step
-X_ps_train = pandas.read_csv('./Machine_Learning/train/X_PS_train.csv', delimiter=',', encoding='latin-1')
-Y_ps_train = pandas.read_csv('./Machine_Learning/train/Y_PS_train.csv', delimiter=',', encoding='latin-1')
+X_ps_train = pandas.read_csv('../out/train/X_PS_train.csv', delimiter=',', encoding='latin-1')
+Y_ps_train = pandas.read_csv('../out/train/Y_PS_train.csv', delimiter=',', encoding='latin-1')
 
 ps_model = MultiOutputRegressor(LinearSVR(C=0.2, dual=True, epsilon=0.4, fit_intercept=False, loss='squared_epsilon_insensitive', max_iter= 1000, tol= 0.01))
 ps_model.fit(X_ps_train, Y_ps_train)
 
-dump(ps_model,'./Saved_Models/Process-step_Model')
+dump(ps_model,'../out/Process-step_Model')
 
 
 
 ## Problem type
-X_pt_train = pandas.read_csv('./Machine_Learning/train/X_PT_train.csv', delimiter=',', encoding='latin-1')
-Y_pt_train = pandas.read_csv('./Machine_Learning/train/Y_PT_train.csv', delimiter=',', encoding='latin-1')
+X_pt_train = pandas.read_csv('../out/train/X_PT_train.csv', delimiter=',', encoding='latin-1')
+Y_pt_train = pandas.read_csv('.../out/train/Y_PT_train.csv', delimiter=',', encoding='latin-1')
 
 ps_model = MultiOutputRegressor(LinearSVR(C=0.2, dual=True, epsilon=0.4, fit_intercept=True, loss='squared_epsilon_insensitive', max_iter= 1000, tol= 0.01))
 ps_model.fit(X_pt_train, Y_pt_train)
 
-dump(ps_model,'./Saved_Models/Problem-type_Model')
+dump(ps_model,'../out/Problem-type_Model')
 
 
 ## Contributing factors
-X_cf_train = pandas.read_csv('./Machine_Learning/train/X_CF_train.csv', delimiter=',', encoding='latin-1')
-Y_cf_train = pandas.read_csv('./Machine_Learning/train/Y_CF_train.csv', delimiter=',', encoding='latin-1')
+X_cf_train = pandas.read_csv('../out/train/X_CF_train.csv', delimiter=',', encoding='latin-1')
+Y_cf_train = pandas.read_csv('../out/train/Y_CF_train.csv', delimiter=',', encoding='latin-1')
 
 ps_model = MultiOutputRegressor(LinearSVR(C=0.2, dual=True, epsilon=0.4, fit_intercept=False, loss='squared_epsilon_insensitive', max_iter= 1000, tol= 0.01))
 ps_model.fit(X_cf_train, Y_cf_train)
 
-dump(ps_model,'./Saved_Models/Contributing-factors_Model')
+dump(ps_model,'../out/Contributing-factors_Model')
 
 
 
@@ -70,32 +70,32 @@ def average_lowest_correct(list_of_trues, list_of_preds):
 predict_score = []
 
 #process step
-X_ps_test = pandas.read_csv('./Machine_Learning/test/X_PS_test.csv', delimiter=',', encoding='latin-1')
-Y_ps_test = pandas.read_csv('./Machine_Learning/test/Y_PS_test.csv', delimiter=',', encoding='latin-1')
+X_ps_test = pandas.read_csv('../out/test/X_PS_test.csv', delimiter=',', encoding='latin-1')
+Y_ps_test = pandas.read_csv('.../out/test/Y_PS_test.csv', delimiter=',', encoding='latin-1')
 
-Process_step_Model = load('./Saved_Models/Process-step_Model')
+Process_step_Model = load('.../out/Process-step_Model')
 ps_score = average_lowest_correct(Y_ps_test, Process_step_Model.predict(X_ps_test))
 print ("Predicted score for Process Step is = ", ps_score)
 predict_score.append({'Dataset':"Process Step",'Prediction_score':ps_score})
 
 #problem type
-X_pt_test = pandas.read_csv('./Machine_Learning/test/X_PT_test.csv', delimiter=',', encoding='latin-1')
-Y_pt_test = pandas.read_csv('./Machine_Learning/test/Y_PT_test.csv', delimiter=',', encoding='latin-1')
+X_pt_test = pandas.read_csv('.../out/test/X_PT_test.csv', delimiter=',', encoding='latin-1')
+Y_pt_test = pandas.read_csv('../out/test/Y_PT_test.csv', delimiter=',', encoding='latin-1')
 
-Problem_type_Model = load('./Saved_Models/Problem-type_Model')
+Problem_type_Model = load('../out/Problem-type_Model')
 pt_score = average_lowest_correct(Y_pt_test, Problem_type_Model.predict(X_pt_test))
 print ("Predicted score for Problem Type is = ", pt_score)
 predict_score.append({'Dataset':"Problem Type",'Prediction_score':pt_score})                  
 
 #contributing factors
-X_cf_test = pandas.read_csv('./Machine_Learning/test/X_CF_test.csv', delimiter=',', encoding='latin-1')
-Y_cf_test = pandas.read_csv('./Machine_Learning/test/Y_CF_test.csv', delimiter=',', encoding='latin-1')
+X_cf_test = pandas.read_csv('../out/test/X_CF_test.csv', delimiter=',', encoding='latin-1')
+Y_cf_test = pandas.read_csv('../out/test/Y_CF_test.csv', delimiter=',', encoding='latin-1')
 
-Contributing_factor_Model = load('./Saved_Models/Contributing-factors_Model')
+Contributing_factor_Model = load('../out/Contributing-factors_Model')
 cf_score = average_lowest_correct(Y_cf_test, Contributing_factor_Model.predict(X_cf_test))
 print ("Predicted score for Contributing Factor is = ", cf_score)
 predict_score.append({'Dataset':"Contributing factors",'Prediction_score':cf_score})
 
 
 score = pandas.DataFrame(predict_score, columns=['Dataset','Prediction_score']) 
-score.to_csv('7. Prediction Scores.csv', encoding='utf-8', index=False, quoting=csv.QUOTE_NONNUMERIC)
+score.to_csv('../out/7. Prediction Scores.csv', encoding='utf-8', index=False, quoting=csv.QUOTE_NONNUMERIC)

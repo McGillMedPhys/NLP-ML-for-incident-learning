@@ -211,4 +211,4 @@ cihi['Contributing Factors'] = cihi['Contributing Factors'].apply(lambda x:map_c
 
 #---------------- Combining both datasets into one ---------------#
 combined = pandas.concat([muhc, cihi])
-combined.to_csv('1_Combined.csv', encoding='utf-8', index=False, quoting=csv.QUOTE_NONNUMERIC)
+combined.to_csv('../out/1_Combined.csv', encoding='utf-8', index=False, quoting=csv.QUOTE_NONNUMERIC)

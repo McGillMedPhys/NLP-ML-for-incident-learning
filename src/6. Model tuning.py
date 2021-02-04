@@ -97,8 +97,8 @@ argument in the make scorer function, the best scorer will be giving us the high
 '''
 
 # Process Step
-X_ps = pandas.read_csv('./Machine_Learning/train/X_PS_train.csv', delimiter=',', encoding='latin-1')
-Y_ps = pandas.read_csv('./Machine_Learning/train/Y_PS_train.csv', delimiter=',', encoding='latin-1')
+X_ps = pandas.read_csv('../out/train/X_PS_train.csv', delimiter=',', encoding='latin-1')
+Y_ps = pandas.read_csv('../out/train/Y_PS_train.csv', delimiter=',', encoding='latin-1')
 
 ps_scores = []
 
@@ -113,12 +113,12 @@ for model_name, mp in model_params.items():
         'best_params': clf_ps.best_params_})
 
 score_ps = pandas.DataFrame(ps_scores, columns=['model','best_score','best_params']) 
-score_ps.to_csv('./Machine_Learning/6_PS_Tuned Models_1.csv', encoding='utf-8', index=False, quoting=csv.QUOTE_NONNUMERIC)
+score_ps.to_csv('../out/6_PS_Tuned Models_1.csv', encoding='utf-8', index=False, quoting=csv.QUOTE_NONNUMERIC)
 
 
 ## Prblem type
-X_pt = pandas.read_csv('./Machine_Learning/train/X_PT_train.csv', delimiter=',', encoding='latin-1')
-Y_pt = pandas.read_csv('./Machine_Learning/train/Y_PT_train.csv', delimiter=',', encoding='latin-1')
+X_pt = pandas.read_csv('../out/train/X_PT_train.csv', delimiter=',', encoding='latin-1')
+Y_pt = pandas.read_csv('../out/train/Y_PT_train.csv', delimiter=',', encoding='latin-1')
 
 pt_scores = []
 
@@ -133,13 +133,13 @@ for model_name, mp in model_params.items():
         'best_params': clf_pt.best_params_})
 
 score_pt = pandas.DataFrame(pt_scores, columns=['model','best_score','best_params']) 
-score_pt.to_csv('./Machine_Learning/6_PT_Tuned Models.csv', encoding='utf-8', index=False, quoting=csv.QUOTE_NONNUMERIC)
+score_pt.to_csv('../out/6_PT_Tuned Models.csv', encoding='utf-8', index=False, quoting=csv.QUOTE_NONNUMERIC)
 
 
 
 # ## Contribution factors
-X_cf = pandas.read_csv('./Machine_Learning/train/X_CF_train.csv', delimiter=',', encoding='latin-1')
-Y_cf = pandas.read_csv('./Machine_Learning/train/Y_CF_train.csv', delimiter=',', encoding='latin-1')
+X_cf = pandas.read_csv('../out/train/X_CF_train.csv', delimiter=',', encoding='latin-1')
+Y_cf = pandas.read_csv('../out/train/Y_CF_train.csv', delimiter=',', encoding='latin-1')
 
 cf_scores = []
 
@@ -154,4 +154,4 @@ for model_name, mp in model_params.items():
         'best_params': clf_cf.best_params_})
 
 score_cf = pandas.DataFrame(cf_scores, columns=['model','best_score','best_params']) 
-score_cf.to_csv('./Machine_Learning/6_CF_Tuned Models.csv', encoding='utf-8', index=False, quoting=csv.QUOTE_NONNUMERIC)
+score_cf.to_csv('../out/6_CF_Tuned Models.csv', encoding='utf-8', index=False, quoting=csv.QUOTE_NONNUMERIC)
