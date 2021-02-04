@@ -1,6 +1,7 @@
 # NLP-ML-for-incident-learning
 This is a python program that uses Natural Language Processing (NLP) in conjunction with supervised Machine Learning (ML) techniques to semi-automate the classification of radiotherapy incident reports. In this script we compile the radiotherapy incident reports collected from the Canadian Institute for Health Information (CIHI) database as well as Safety and Incident Learning System (SaILS) database of McGill University Health Centre (MUHC) Montreal, Canada. The incident reports are processed using numerous NLP techniques. The processed reports are then used to train multiple machine learning models from the Scikit-Learn library. We extended the models to be multi-label compatible and our final model is capable of generating a drop-down menu of label suggestions to assist incident investigating personnel. Refer to the [reference](#Reference) section for more details.
 
+[![DOI](https://zenodo.org/badge/335829173.svg)](https://zenodo.org/badge/latestdoi/335829173)
 
 ## Table of Contents
 
