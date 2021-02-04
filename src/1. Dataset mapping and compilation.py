@@ -13,7 +13,7 @@ import pandas
 
 #-------- MUHC dataset -------------#
 # Import original dataset
-muhc = pandas.read_csv('0_MUHC_data.csv', delimiter=',', encoding='latin-1').fillna('') # fillna function replaces NaN with empty string
+muhc = pandas.read_csv('../0_MUHC_data.csv', delimiter=',', encoding='latin-1').fillna('') # fillna function replaces NaN with empty string
 
 # Create a temporary DataFrame of only the relevant columns.
 temp = muhc[['event_type']].copy()
@@ -27,7 +27,7 @@ muhc = temp[['ID', 'Process Step', 'Problem Type', 'Contributing Factors', 'Over
 
 #-------- CIHI dataset -------------#
 # Import original dataset
-cihi = pandas.read_csv('0_CIHI_data.csv', delimiter=',', encoding='latin-1').fillna('')
+cihi = pandas.read_csv('../0_CIHI_data.csv', delimiter=',', encoding='latin-1').fillna('')
 
 # Create a temporary DataFrame of only the relevant columns.
 temp = cihi[['Frequency']].copy()
