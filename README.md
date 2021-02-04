@@ -42,6 +42,9 @@ Contact email: felix.mathew@mail.mcgill.ca
 * Grid search for hyperparameter tuning
 
 ## Instructions
+The Linear SVR models that we trained and tuned on our radiation oncology incident reports can be obtained from the [out](out) folder.
+
+To develop a machine learning model on an entirely new dataset, follow the steps:
 1. Fill-in the [MUHC datafile](0_MUHC_data.csv) and the [CIHI datafile](0_CIHI_data.csv) with the incident report data according to the templates given.
 2. Run the python files in order from the [src](src) folder.
 3. Obtaine the output files from the [out](out) folder.
