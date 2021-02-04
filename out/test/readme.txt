@@ -1,0 +1,1 @@
+This is the directory where the testing set (20% of the dataset) will be stored.
