@@ -35,7 +35,7 @@ Contact email: felix.mathew@mail.mcgill.ca
 ### Machine Learning (ML) with Scikit-Learn:
 * One-hot encoding of the class labels
 * TF-IDF vectorization of the free-text data
-* Multi-label capabity using multi-output methods
+* Multi-label capability using multi-output methods
 * Extensive model evaluation
 * Custom scorer
 * 5-fold cross-validation
